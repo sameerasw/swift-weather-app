@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.blue, Color("lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Balangoda, Sri Lanka")
@@ -28,8 +28,13 @@ struct ContentView: View {
                         .font(.system(size: 90, weight: .medium))
                         .foregroundColor(.white)
                 }
-                HStack{
-                    ExtractView()
+                Spacer()
+                HStack(spacing: 20){
+                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temprature: 28)
+                    WeatherDayView(dayOfWeek: "WED", imageName: "cloud.fog.fill", temprature: 29)
+                    WeatherDayView(dayOfWeek: "THU", imageName: "sun.max.fill", temprature: 31)
+                    WeatherDayView(dayOfWeek: "FRI", imageName: "wind.snow", temprature: 25)
+                    WeatherDayView(dayOfWeek: "SAT", imageName: "sunset.fill", temprature: 32)
                 }
                 Spacer()
             }
@@ -44,17 +49,22 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct ExtractView: View {
+struct WeatherDayView: View {
+    
+    var dayOfWeek: String
+    var imageName: String
+    var temprature: Int
+    
     var body: some View {
         VStack(spacing: 12) {
-            Text("TUE")
+            Text(dayOfWeek)
                 .foregroundColor(.white)
-            Image(systemName: "sun.min.fill")
+            Image(systemName: imageName)
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-            Text("28°")
+                .frame(width: 40, height: 40)
+            Text("\(temprature)°")
                 .font(.system(size: 20))
                 .foregroundColor(.white)
         }
