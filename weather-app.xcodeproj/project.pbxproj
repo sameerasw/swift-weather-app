@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXFileReference section */
@@ -21,10 +21,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		B9F538F12E3456350053A1A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -58,14 +56,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				B9F538F62E3456350053A1A2 /* weather-app */,
 			);
 			name = "weather-app";
-			packageProductDependencies = (
-			);
 			productName = "weather-app";
 			productReference = B9F538F42E3456350053A1A2 /* weather-app.app */;
 			productType = "com.apple.product-type.application";
@@ -94,7 +88,7 @@
 			);
 			mainGroup = B9F538EB2E3456350053A1A2;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = B9F538F52E3456350053A1A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -107,25 +101,21 @@
 /* Begin PBXResourcesBuildPhase section */
 		B9F538F22E3456350053A1A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9F538F02E3456350053A1A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		B9F538FD2E3456380053A1A2 /* Debug */ = {
+		B9F538FD2E3456380053A1A2 /* Debug configuration for PBXProject "weather-app" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +179,7 @@
 			};
 			name = Debug;
 		};
-		B9F538FE2E3456380053A1A2 /* Release */ = {
+		B9F538FE2E3456380053A1A2 /* Release configuration for PBXProject "weather-app" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,7 +236,7 @@
 			};
 			name = Release;
 		};
-		B9F539002E3456380053A1A2 /* Debug */ = {
+		B9F539002E3456380053A1A2 /* Debug configuration for PBXNativeTarget "weather-app" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -277,7 +267,7 @@
 			};
 			name = Debug;
 		};
-		B9F539012E3456380053A1A2 /* Release */ = {
+		B9F539012E3456380053A1A2 /* Release configuration for PBXNativeTarget "weather-app" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -314,19 +304,17 @@
 		B9F538EF2E3456350053A1A2 /* Build configuration list for PBXProject "weather-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B9F538FD2E3456380053A1A2 /* Debug */,
-				B9F538FE2E3456380053A1A2 /* Release */,
+				B9F538FD2E3456380053A1A2 /* Debug configuration for PBXProject "weather-app" */,
+				B9F538FE2E3456380053A1A2 /* Release configuration for PBXProject "weather-app" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B9F538FF2E3456380053A1A2 /* Build configuration list for PBXNativeTarget "weather-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B9F539002E3456380053A1A2 /* Debug */,
-				B9F539012E3456380053A1A2 /* Release */,
+				B9F539002E3456380053A1A2 /* Debug configuration for PBXNativeTarget "weather-app" */,
+				B9F539012E3456380053A1A2 /* Release configuration for PBXNativeTarget "weather-app" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

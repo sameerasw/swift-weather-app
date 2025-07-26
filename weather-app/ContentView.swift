@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView(isNight: $isNight) // passing binding variable
+            BackgroundView(isNight: isNight) // passing binding variable
             VStack {
                 CityTextView(cityName: "Balangoda, Sri Lanka")
                 MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temprature: 27)
@@ -30,7 +30,7 @@ struct ContentView: View {
                 Button{
                     isNight.toggle()
                 } label: {
-                    WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+                    WeatherButton(isNight: isNight, title: "Change Day Time" )
                 }
                 
                 Spacer()
@@ -57,8 +57,10 @@ struct WeatherDayView: View {
             Text(dayOfWeek)
                 .foregroundColor(.white)
             Image(systemName: imageName)
-                .renderingMode(.original)
+                .symbolRenderingMode(.multicolor)
+//                .symbolRenderingMode(.palette)
                 .resizable()
+//                .foregroundStyle(.blue, .darkBlue, .lightBlue)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
             Text("\(temprature)°")
@@ -70,11 +72,15 @@ struct WeatherDayView: View {
 
 struct BackgroundView: View {
     
-    @Binding var isNight: Bool
+//    @Binding var isNight: Bool we do not need binding as we do not change the value here
+    var isNight: Bool
     
     var body: some View{
-        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue ,isNight ? Color("darkBlue") : Color("lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
-            .edgesIgnoringSafeArea(.all)
+//        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue ,isNight ? Color("darkBlue") : Color("lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+//            .ignoresSafeArea()
+        ContainerRelativeShape()
+            .fill(isNight ? Color.black.gradient : Color.blue.gradient)
+            .ignoresSafeArea()
     }
 }
 
