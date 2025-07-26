@@ -10,24 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, Color("lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
             VStack {
-                Text("Balangoda, Sri Lanka")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                VStack(spacing: 10) {
-                 Image(systemName: "cloud.sun.fill")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 180, height: 180)
-                    
-                    Text("27°")
-                        .font(.system(size: 90, weight: .medium))
-                        .foregroundColor(.white)
-                }
+                CityTextView(cityName: "Balangoda, Sri Lanka")
+                MainWeatherStatusView(imageName: "cloud.sun.fill", temprature: 27)
                 .padding(.bottom, 40)
                 HStack(spacing: 20){
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temprature: 28)
@@ -41,10 +27,7 @@ struct ContentView: View {
                 Button{
                     print("tapped")
                 } label: {
-                    Text("Change Day Time")
-                        .frame(width: 280, height: 50, alignment: .center)
-                        .background(.white)
-                        .cornerRadius(10)
+                    WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
                 }
                 
                 Spacer()
@@ -79,5 +62,61 @@ struct WeatherDayView: View {
                 .font(.system(size: 20))
                 .foregroundColor(.white)
         }
+    }
+}
+
+struct BackgroundView: View {
+    
+    var topColor: Color
+    var bottomColor: Color
+    
+    var body: some View{
+        LinearGradient(gradient: Gradient(colors: [topColor ,bottomColor]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct CityTextView: View {
+    var cityName: String
+    
+    var body: some View {
+        
+        Text(cityName)
+            .font(.title)
+            .foregroundColor(.white)
+            .padding()
+    }
+}
+
+struct MainWeatherStatusView: View {
+    var imageName: String
+    var temprature: Int
+    
+    var body: some View{
+        VStack(spacing: 10) {
+         Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180, height: 180)
+            
+            Text("\(temprature)°")
+                .font(.system(size: 90, weight: .medium))
+                .foregroundColor(.white)
+        }
+    }
+}
+
+struct WeatherButton: View {
+    var title: String
+    var textColor: Color
+    var backgroundColor: Color
+    
+    var body: some View {
+        Text(title)
+            .frame(width: 280, height: 50, alignment: .center)
+            .foregroundColor(textColor)
+            .background(backgroundColor)
+            .cornerRadius(10)
     }
 }
