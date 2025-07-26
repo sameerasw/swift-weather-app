@@ -17,7 +17,7 @@ struct ContentView: View {
                            bottomColor: isNight ? Color("darkBlue") : Color("lightBlue"))
             VStack {
                 CityTextView(cityName: "Balangoda, Sri Lanka")
-                MainWeatherStatusView(imageName: "cloud.sun.fill", temprature: 27)
+                MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temprature: 27)
                 .padding(.bottom, 40)
                 HStack(spacing: 20){
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temprature: 28)
